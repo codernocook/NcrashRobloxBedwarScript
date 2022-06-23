@@ -1479,11 +1479,13 @@ function Elements:UpdateOverlay(plrkilled, gameswon, mode, callback)
     plrkilled = plrkilled or "0"
     gameswon = gameswon or "0"
     local SeasonInfo = game.CoreGui[LibName]:WaitForChild("SeasonInfo")
-    if mode then
+    if mode == "on" then
         SeasonInfo.Visible = true
         SeasonInfo.PlayersKilled.Text = plrkilled
         SeasonInfo.GamesWon.Text = gameswon
-    else
+    end
+
+    if mode == "off" then
         SeasonInfo.Visible = false
         SeasonInfo.PlayersKilled.Text = plrkilled
         SeasonInfo.GamesWon.Text = gameswon
