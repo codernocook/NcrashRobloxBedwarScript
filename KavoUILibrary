@@ -1309,10 +1309,170 @@ UICorner_2.Parent = FillFrame
 			Notification.Visible = true
 		end
 	end
+end
 ---------
 
-            end
+function Elements:Overlay(plrkilled, gameswon, callback)
+    local SeasonInfo = Instance.new("Frame")
+local SeasonInfoLabel = Instance.new("TextLabel")
+local Overlayborder = Instance.new("Frame")
+local PlaytimeLabel = Instance.new("TextLabel")
+local GamesWonLabel = Instance.new("TextLabel")
+local PlayersKilledLabel = Instance.new("TextLabel")
+local Playtime = Instance.new("TextLabel")
+local PlayersKilled = Instance.new("TextLabel")
+local GamesWon = Instance.new("TextLabel")
 
+SeasonInfo.Name = "SeasonInfo"
+SeasonInfo.Parent = game.StarterGui.ScreenGui
+SeasonInfo.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+SeasonInfo.BackgroundTransparency = 0.700
+SeasonInfo.BorderSizePixel = 0
+SeasonInfo.Position = UDim2.new(0.0234627761, 0, 0.0483271331, 0)
+SeasonInfo.Size = UDim2.new(0.242718443, 0, 0.185873613, 0)
+
+SeasonInfoLabel.Name = "SeasonInfoLabel"
+SeasonInfoLabel.Parent = SeasonInfo
+SeasonInfoLabel.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+SeasonInfoLabel.BackgroundTransparency = 1.000
+SeasonInfoLabel.BorderSizePixel = 0
+SeasonInfoLabel.Size = UDim2.new(1, 0, 0.25333333, 0)
+SeasonInfoLabel.Font = Enum.Font.SourceSansBold
+SeasonInfoLabel.Text = "Season Info"
+SeasonInfoLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+SeasonInfoLabel.TextSize = 25.000
+
+Overlayborder.Name = "Overlayborder"
+Overlayborder.Parent = SeasonInfo
+Overlayborder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Overlayborder.BorderSizePixel = 0
+Overlayborder.Position = UDim2.new(0.0399999991, 0, 0.25333333, 0)
+Overlayborder.Size = UDim2.new(0.916666687, 0, 0.0199999996, 0)
+
+PlaytimeLabel.Name = "PlaytimeLabel"
+PlaytimeLabel.Parent = SeasonInfo
+PlaytimeLabel.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+PlaytimeLabel.BackgroundTransparency = 1.000
+PlaytimeLabel.BorderSizePixel = 0
+PlaytimeLabel.Position = UDim2.new(0.0399999991, 0, 0.312999994, 0)
+PlaytimeLabel.Size = UDim2.new(0.666666687, 0, 0.200000003, 0)
+PlaytimeLabel.Font = Enum.Font.SourceSansBold
+PlaytimeLabel.Text = "Play Time:"
+PlaytimeLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlaytimeLabel.TextSize = 15.000
+PlaytimeLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+GamesWonLabel.Name = "GamesWonLabel"
+GamesWonLabel.Parent = SeasonInfo
+GamesWonLabel.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+GamesWonLabel.BackgroundTransparency = 1.000
+GamesWonLabel.BorderSizePixel = 0
+GamesWonLabel.Position = UDim2.new(0.0400000215, 0, 0.50666666, 0)
+GamesWonLabel.Size = UDim2.new(0.666666687, 0, 0.200000003, 0)
+GamesWonLabel.Font = Enum.Font.SourceSansBold
+GamesWonLabel.Text = "Games Won"
+GamesWonLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+GamesWonLabel.TextSize = 15.000
+GamesWonLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+PlayersKilledLabel.Name = "PlayersKilledLabel"
+PlayersKilledLabel.Parent = SeasonInfo
+PlayersKilledLabel.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+PlayersKilledLabel.BackgroundTransparency = 1.000
+PlayersKilledLabel.BorderSizePixel = 0
+PlayersKilledLabel.Position = UDim2.new(0.0399999619, 0, 0.706666708, 0)
+PlayersKilledLabel.Size = UDim2.new(0.666666687, 0, 0.200000003, 0)
+PlayersKilledLabel.Font = Enum.Font.SourceSansBold
+PlayersKilledLabel.Text = "Players Killed"
+PlayersKilledLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayersKilledLabel.TextSize = 15.000
+PlayersKilledLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+Playtime.Name = "Playtime"
+Playtime.Parent = SeasonInfo
+Playtime.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+Playtime.BackgroundTransparency = 1.000
+Playtime.BorderSizePixel = 0
+Playtime.Position = UDim2.new(0.289999962, 0, 0.312999994, 0)
+Playtime.Size = UDim2.new(0.666666687, 0, 0.200000003, 0)
+Playtime.Font = Enum.Font.SourceSansBold
+Playtime.Text = "00:00:00"
+Playtime.TextColor3 = Color3.fromRGB(255, 255, 255)
+Playtime.TextSize = 20.000
+Playtime.TextXAlignment = Enum.TextXAlignment.Right
+
+PlayersKilled.Name = "PlayersKilled"
+PlayersKilled.Parent = SeasonInfo
+PlayersKilled.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+PlayersKilled.BackgroundTransparency = 1.000
+PlayersKilled.BorderSizePixel = 0
+PlayersKilled.Position = UDim2.new(0.333333343, 0, 0.713000059, 0)
+PlayersKilled.Size = UDim2.new(0.623333335, 0, 0.200000003, 0)
+PlayersKilled.Font = Enum.Font.SourceSansBold
+PlayersKilled.Text = plrkilled
+PlayersKilled.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayersKilled.TextSize = 20.000
+PlayersKilled.TextXAlignment = Enum.TextXAlignment.Right
+
+GamesWon.Name = "GamesWon"
+GamesWon.Parent = SeasonInfo
+GamesWon.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+GamesWon.BackgroundTransparency = 1.000
+GamesWon.BorderSizePixel = 0
+GamesWon.Position = UDim2.new(0.289999962, 0, 0.513000011, 0)
+GamesWon.Size = UDim2.new(0.666666687, 0, 0.200000003, 0)
+GamesWon.Font = Enum.Font.SourceSansBold
+GamesWon.Text = gameswon
+GamesWon.TextColor3 = Color3.fromRGB(255, 255, 255)
+GamesWon.TextSize = 20.000
+GamesWon.TextXAlignment = Enum.TextXAlignment.Right
+
+--Scripts
+local times = {
+	hour = 0,
+	min = 0,
+	sec = 0
+}
+
+local text = {
+	hour = "00",
+	min = "00",
+	sec = "00"
+}
+
+local Playtime = script.Parent.Playtime
+while wait(1) do
+	times.sec += 01
+	if times.sec >= 60 then
+		times.sec = 00
+		times.min += 01
+		if times.min >= 60 then
+			times.min = 00
+			times.hour += 01
+		end
+	end
+	--
+	if times.sec <= 9  then
+		text.sec = "0"..times.sec
+	else
+		text.sec = times.sec
+	end
+
+	if times.min <= 9 then
+		text.min = "0"..times.min
+	else
+		text.min = times.min
+	end
+
+	if times.hour <= 9 then
+		text.hour = "0"..times.hour
+	else
+		text.hour = times.hour
+	end
+	--
+	Playtime.Text = text.hour..":"..text.min..":"..text.sec
+end
+end
             function Elements:NewSlider(slidInf, slidTip, maxvalue, minvalue, callback)
                 slidInf = slidInf or "Slider"
                 slidTip = slidTip or "Slider tip here"
