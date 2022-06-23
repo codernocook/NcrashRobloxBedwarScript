@@ -1311,8 +1311,9 @@ UICorner_2.Parent = FillFrame
 	end
 end
 ---------
-
 function Elements:Overlay(plrkilled, gameswon, callback)
+    plrkilled = plrkilled or "0"
+    gameswon = gameswon or "0"
     local SeasonInfo = Instance.new("Frame")
 local SeasonInfoLabel = Instance.new("TextLabel")
 local Overlayborder = Instance.new("Frame")
@@ -1324,7 +1325,7 @@ local PlayersKilled = Instance.new("TextLabel")
 local GamesWon = Instance.new("TextLabel")
 
 SeasonInfo.Name = "SeasonInfo"
-SeasonInfo.Parent = game.StarterGui.ScreenGui
+SeasonInfo.Parent = game.CoreGui[LibName]
 SeasonInfo.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
 SeasonInfo.BackgroundTransparency = 0.700
 SeasonInfo.BorderSizePixel = 0
@@ -1472,6 +1473,21 @@ while wait(1) do
 	--
 	Playtime.Text = text.hour..":"..text.min..":"..text.sec
 end
+end
+
+function Elements:UpdateOverlay(plrkilled, gameswon, mode, callback)
+    plrkilled = plrkilled or "0"
+    gameswon = gameswon or "0"
+    local SeasonInfo = game.CoreGui[LibName]:WaitForChild("SeasonInfo")
+    if mode then
+        SeasonInfo.Visible = true
+        SeasonInfo.PlayersKilled.Text = plrkilled
+        SeasonInfo.GamesWon.Text = gameswon
+    else
+        SeasonInfo.Visible = false
+        SeasonInfo.PlayersKilled.Text = plrkilled
+        SeasonInfo.GamesWon.Text = gameswon
+    end
 end
             function Elements:NewSlider(slidInf, slidTip, maxvalue, minvalue, callback)
                 slidInf = slidInf or "Slider"
