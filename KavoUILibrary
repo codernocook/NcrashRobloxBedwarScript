@@ -1295,7 +1295,6 @@ FillFrame.BorderSizePixel = 0
 UICorner_2.Parent = FillFrame
 
 -- Scripts:
-	script.Name = math.random(100000000, 999999999)
 	local NotificationDbar = Notification.DelayUI.FillFrame
 	for i = 1, 100 do
 		wait(.04)
@@ -1308,9 +1307,21 @@ UICorner_2.Parent = FillFrame
 			Notification:Destroy()
 		else
 			Notification.Visible = true
+            
 		end
 	end
 
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+
+    counter = 0
+
+    while wait(0.1)do
+	NotificationDbar.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	Notification.NotificationLabel.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	Notification.NotificationText.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	counter = counter + 0.01
+end
+---------
 
             end
 
