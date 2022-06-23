@@ -1309,25 +1309,6 @@ UICorner_2.Parent = FillFrame
 			Notification.Visible = true
 		end
 	end
-
-    local function OFAHZ_fake_script() -- Notification.NcrashRainbow 
-        local script = Instance.new('LocalScript', Notification)
-        script.Name = "NcrashRainbow"
-    
-        
-        function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
-        
-        counter = 0
-        
-        while wait(.1)do
-            NotificationDbar.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
-            NotificationLabel.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
-            NotificationText.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
-            counter = counter + 0.01
-        end
-    end
-    coroutine.wrap(OFAHZ_fake_script)()
-    
 ---------
 
             end
