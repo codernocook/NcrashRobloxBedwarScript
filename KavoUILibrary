@@ -1317,8 +1317,8 @@ UICorner_2.Parent = FillFrame
 
     while wait(0.1)do
 	NotificationDbar.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
-	Notification.NotificationLabel.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
-	Notification.NotificationText.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	NotificationLabel.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	NotificationText.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
 	counter = counter + 0.01
 end
 ---------
