@@ -1441,7 +1441,6 @@ local text = {
 	sec = "00"
 }
 
-local Playtime = script.Parent.Playtime
 while wait(1) do
 	times.sec += 01
 	if times.sec >= 60 then
