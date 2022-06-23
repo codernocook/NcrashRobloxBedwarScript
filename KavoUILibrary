@@ -1442,13 +1442,13 @@ local text = {
 }
 
 while wait(1) do
-	times.sec += 01
+	times.sec += 1
 	if times.sec >= 60 then
-		times.sec = 00
-		times.min += 01
+		times.sec = 0
+		times.min += 1
 		if times.min >= 60 then
-			times.min = 00
-			times.hour += 01
+			times.min = 0
+			times.hour += 1
 		end
 	end
 	--
