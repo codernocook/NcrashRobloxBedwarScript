@@ -1235,7 +1235,7 @@ local FillFrame = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
 
 Notification.Name = "Notification"
-Notification.Parent = game.StarterGui.Ncrash
+Notification.Parent = game.CoreGui[LibName]
 Notification.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
 Notification.BackgroundTransparency = 0.300
 Notification.BorderSizePixel = 0
