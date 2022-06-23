@@ -1295,12 +1295,7 @@ FillFrame.BorderSizePixel = 0
 UICorner_2.Parent = FillFrame
 
 -- Scripts:
-
-local function HCKLUUQ_fake_script() -- Notification.NcrashRainbow 
-	local script = Instance.new('LocalScript', Notification)
-
 	script.Name = math.random(100000000, 999999999)
-	local Notification = script.Parent
 	local NotificationDbar = Notification.DelayUI.FillFrame
 	for i = 1, 100 do
 		wait(.04)
@@ -1310,14 +1305,12 @@ local function HCKLUUQ_fake_script() -- Notification.NcrashRainbow
 		if i == 100 then
 			Notification.Visible = false
 			Notification.NotificationText.Text = ""
-			script.Disabled = true
-			script.Parent:Destroy()
+			Notification:Destroy()
 		else
 			Notification.Visible = true
 		end
 	end
-end
-coroutine.wrap(HCKLUUQ_fake_script)()
+
 
             end
 
